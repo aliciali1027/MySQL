@@ -44,6 +44,15 @@ https://stackoverflow.com/questions/50671681/cannot-load-driver-class-com-mysql-
 Step 3: Reimport POM.xml - Maven - Reimport
         And then: Rebuild the project and run again
        
+Issue 3: java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+====
+Solution: Add allowPublicKeyRetrieval=true
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+https://stackoverflow.com/questions/50379839/connection-java-mysql-public-key-retrieval-is-not-allowed
+
 
 
 
